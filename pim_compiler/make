@@ -1,0 +1,39 @@
+all: build/pim_compiler
+
+build/pim_compiler: build/PIMInstructionGenerator.o build/MatrixMultiplicationTranslator.o build/main.o
+	g++ -std=c++17 -Wall -o build/pim_compiler build/PIMInstructionGenerator.o build/MatrixMultiplicationTranslator.o build/main.o
+
+build/PIMInstructionGenerator.o: src/PIMInstructionGenerator.cpp
+	g++ -std=c++17 -Wall -Iinclude -c src/PIMInstructionGenerator.cpp -o build/PIMInstructionGenerator.o
+
+build/MatrixMultiplicationTranslator.o: src/MatrixMultiplicationTranslator.cpp
+	g++ -std=c++17 -Wall -Iinclude -c src/MatrixMultiplicationTranslator.cpp -o build/MatrixMultiplicationTranslator.o
+
+build/main.o: src/main.cpp
+	g++ -std=c++17 -Wall -Iinclude -c src/main.cpp -o build/main.o
+
+run: all
+	./build/pim_compiler
+
+clean:
+	rm -f build/*.o build/pim_compiler/* Makefile */
+
+all: build/pim_compiler
+
+build/pim_compiler: build/PIMInstructionGenerator.o build/MatrixMultiplicationTranslator.o build/main.o
+	g++ -std=c++17 -Wall -o build/pim_compiler build/PIMInstructionGenerator.o build/MatrixMultiplicationTranslator.o build/main.o
+
+build/PIMInstructionGenerator.o: src/PIMInstructionGenerator.cpp
+	g++ -std=c++17 -Wall -Iinclude -c src/PIMInstructionGenerator.cpp -o build/PIMInstructionGenerator.o
+
+build/MatrixMultiplicationTranslator.o: src/MatrixMultiplicationTranslator.cpp
+	g++ -std=c++17 -Wall -Iinclude -c src/MatrixMultiplicationTranslator.cpp -o build/MatrixMultiplicationTranslator.o
+
+build/main.o: src/main.cpp
+	g++ -std=c++17 -Wall -Iinclude -c src/main.cpp -o build/main.o
+
+run: all
+	./build/pim_compiler
+
+clean:
+	rm -f build/*.o build/pim_compiler
