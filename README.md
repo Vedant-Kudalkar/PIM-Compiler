@@ -85,11 +85,7 @@ Matrix C:
 - Optimize memory access patterns for reduced latency.
 - Explore vectorization techniques for further acceleration.
 
-## Contributors
 
-- **Vedant Kudalkar** (22BAI1321)
-- **Sahil Rizvi** (22BAI1292)
-- **Vardaan Thapa** (22BAI1329)
 
 ## License
 
